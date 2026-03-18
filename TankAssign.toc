@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: TankAssign
+## Notes: Tank assignment addon for WoW 1.12.1 / Turtle WoW
+## Author: Holyudder
+## Version: 1.0.0
+## SavedVariables: TankAssignDB
+
+TankAssign.xml
+BossData.lua
+TankAssign.lua
+TankAssign_icon.tga
+TankAssign_target.tga
