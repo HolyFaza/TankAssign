@@ -311,7 +311,7 @@ end
 -- FEARWARD COOLDOWN TRACKING
 -------------------------------------------------------------------------------
 local FW_CD_FULL  = 30   -- Fear Ward cooldown in seconds (vanilla 1.12: 30 sec)
-local FW_ICON     = "Interface\\Icons\\Spell_Holy_Excorcism"
+local FW_ICON     = "Interface\\Icons\\Spell_Holy_FearWard"
 local fwCD        = {}   -- [priestName] = GetTime() of last cast
 local FW_ALERT_SHOWN = {}
 local function FW_GetCDRemaining(priestName)
@@ -1473,12 +1473,15 @@ UpdateAssignFrame = function()
                 if slot.tankName then
                     local fr,fg,fb = GetClassColor(
                         tmpl.roster and tmpl.roster[slot.tankName] and tmpl.roster[slot.tankName].class)
-                    RenderBlock(slot.tankName, fr,fg,fb, slot.queue or {}, function(n)
-                        if tmpl.roster and tmpl.roster[n] then
-                            return GetClassColor(tmpl.roster[n].class)
+                    RenderBlock(slot.tankName, fr,fg,fb, {}, nil, nil)
+                    for qi,pname in ipairs(slot.queue or {}) do
+                        local cdRem = FW_GetCDRemaining(pname)
+                        local pr,pg,pb = GetClassColor("PRIEST")
+                        if tmpl.roster and tmpl.roster[pname] then
+                            pr,pg,pb = GetClassColor(tmpl.roster[pname].class)
                         end
-                        return 1,1,1
-                    end)
+                        AddTauntBlock(qi..". "..pname, "Fear Ward", FW_ICON, cdRem, pr,pg,pb)
+                    end
                 end
             end
         end
