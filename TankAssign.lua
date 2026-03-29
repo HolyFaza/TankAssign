@@ -4,7 +4,7 @@
 -- Inspired by and structurally based on HealAssign by the same project
 -------------------------------------------------------------------------------
 local ADDON_NAME    = "TankAssign"
-local ADDON_VERSION = "1.0.0"
+local ADDON_VERSION = "1.0.1"
 local COMM_PREFIX   = "TankAssign"
 -------------------------------------------------------------------------------
 -- CONSTANTS
@@ -157,7 +157,7 @@ end
 -------------------------------------------------------------------------------
 -- TEMPLATE STATE
 -------------------------------------------------------------------------------
-currentTemplate = nil
+local currentTemplate = nil
 local function GetActiveTemplate()
     if currentTemplate then
         if not currentTemplate.roster then currentTemplate.roster = {} end
