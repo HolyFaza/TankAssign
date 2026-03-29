@@ -1,4 +1,4 @@
-# TankAssign
+# TankAssign v1.0.1.
 
 Tank assignment addon for **WoW 1.12.1 / Turtle WoW**.
 
