@@ -2,7 +2,7 @@
 ## Title: TankAssign
 ## Notes: Tank assignment addon for WoW 1.12.1 / Turtle WoW
 ## Author: Holyudder
-## Version: 1.0.0
+## Version: 1.0.1
 ## SavedVariables: TankAssignDB
 
 TankAssign.xml
